@@ -17,7 +17,7 @@ def calculate_ci_z(row):
         'ci_upper': mean + margin
     })
 
-# 应用函数并生成结果
+## 应用函数并生成结果
 ma=pd.read_table("/data/zhangjy/CTCF/TRN/Cells_bedtools/BedtoolsK562/TF_intersectTF/tf_overlap_matrix.tsv")
 ma.set_index('TF',inplace=True)
 df=ma.apply(calculate_ci_z, axis=1)
