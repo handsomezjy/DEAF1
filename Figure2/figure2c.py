@@ -73,7 +73,7 @@ for i in range(5):
     ax.set_xticklabels(labels,rotation=35,fontsize=8)
 
     data_list = [group1, group2, group3]
-    stat_kw, p_kw = stats.kruskal(*data_list)
+    stat_kw, p_kw = stats.mannwhitneyu(*data_list)
     if p_kw < 0.05:
         p_matrix = sp.posthoc_dunn(data_list, p_adjust='bonferroni')
         comparison_pairs = [(1, 2), (2, 3), (1, 3)]
