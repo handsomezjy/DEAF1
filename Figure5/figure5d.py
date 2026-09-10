@@ -48,13 +48,11 @@ legend_elements = [
 ]
 ax.legend(handles=legend_elements,frameon=False,fontsize=9,loc='upper right',ncol=2,bbox_to_anchor=(1.1, 1.05),handletextpad=0.3)
 
-h_stat, p_kruskal = stats.kruskal(data[0],data[1])
-print(f"Kruskal-Wallis p-value: {p_kruskal:.4f}")
+h_stat, p_kruskal = stats.mannwhitneyu(data[0],data[1])
 ax.plot([1.5,2.5], [2.1,2.1], color='k', lw=1)
 ax.text(2, 2.1, 'n.s.' , 
         ha='center', va='bottom', color='k', fontsize=10)
-h_stat, p_kruskal = stats.kruskal(data[2],data[3])
-print(f"Kruskal-Wallis p-value: {p_kruskal}")
+h_stat, p_kruskal = stats.mannwhitneyu(data[2],data[3])
 ax.plot([3,4], [2.1,2.1], color='k', lw=1)
 ax.text(3.5, 2.1, f"P={p_kruskal:.2e}" , 
         ha='center', va='bottom', color='k', fontsize=10)
