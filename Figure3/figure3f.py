@@ -49,13 +49,11 @@ for element in ['whiskers', 'caps', 'medians']:
     plt.setp(box[element], color='k', linewidth=0.8)
 plt.xticks((0.82,1.15,1.85, 2.15),
            ('$DEAF1^{+}$ $CTCF^{+}$','$DEAF1^{+}$ $CTCF^{-}$','$DEAF1^{+}$ $CTCF^{+}$','$DEAF1^{-}$ $CTCF^{+}$'),rotation=60)
-h_stat, p_kruskal = stats.kruskal(data[0],data[1])
-print(f"Kruskal-Wallis p-value: {p_kruskal:.4e}")
+h_stat, p_kruskal = stats.mannwhitneyu(data[0],data[1])
 ax.plot([0.7,1.3], [1.8,1.8], color='k', lw=1)
 ax.text(1,1.8, f"DEAF1\nP={p_kruskal:.2e}", ha='center', va='bottom', color='k', fontsize=9)
 
-h_stat, p_kruskal = stats.kruskal(data[1],data[2])
-print(f"Kruskal-Wallis p-value: {p_kruskal:.4e}")
+h_stat, p_kruskal = stats.mannwhitneyu(data[1],data[2])
 ax.plot([1.7,2.3], [2.1,2.1], color='k', lw=1)
 ax.text(2,2.1, f"CTCF\nP={p_kruskal:.2e}", ha='center', va='bottom', color='k', fontsize=9)
 plt.savefig('/data/zhangjy/DEAF1/ChiPseq_Analysis/ResultsSort/Deeptools/InputNew/Deeptools/mergedPeaks/Pdf/CTCFDEAF1.chipseqSignalRPGC.boxpplot.pdf',   ##
