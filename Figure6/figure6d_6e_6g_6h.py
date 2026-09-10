@@ -94,7 +94,7 @@ for patch, color in zip(box['boxes'], colors):
     patch.set_alpha(0.9)
 for element in ['whiskers', 'caps', 'medians']:
     plt.setp(box[element], color='k', linewidth=0.8)
-h_stat, p_kruskal = stats.kruskal(data[0],data[1])
+h_stat, p_kruskal = stats.mannwhitneyu(data[0],data[1])
 ax.plot([0.7,2.3], [83,83], color='k', lw=1)
 ax.text(1.5,83, f"P={p_kruskal:.3e}", 
         ha='center', va='bottom', color='k', fontsize=8)
@@ -137,7 +137,7 @@ for patch, color in zip(box['boxes'], colors):
     patch.set_alpha(0.9)
 for element in ['whiskers', 'caps', 'medians']:
     plt.setp(box[element], color='k', linewidth=0.8)
-h_stat, p_kruskal = stats.kruskal(data[0],data[1])
+h_stat, p_kruskal = stats.mannwhitneyu(data[0],data[1])
 ax.plot([0.7,2.3], [94,94], color='k', lw=1)
 ax.text(1.5,94, f"P={p_kruskal:.4f}", 
         ha='center', va='bottom', color='k', fontsize=8)
@@ -235,7 +235,7 @@ for patch, color in zip(box['boxes'], colors):
     patch.set_alpha(0.9)
 for element in ['whiskers', 'caps', 'medians']:
     plt.setp(box[element], color='k', linewidth=0.8)
-h_stat, p_kruskal = stats.kruskal(data[0],data[1])
+h_stat, p_kruskal = stats.mannwhitneyu(data[0],data[1])
 ax.plot([0.7,2.3], [30,30], color='k', lw=1)
 ax.text(1.5,30, f"P={p_kruskal:.4f}", 
         ha='center', va='bottom', color='k', fontsize=8)
@@ -279,7 +279,7 @@ for patch, color in zip(box['boxes'], colors):
     patch.set_alpha(0.9)
 for element in ['whiskers', 'caps', 'medians']:
     plt.setp(box[element], color='k', linewidth=0.8)
-h_stat, p_kruskal = stats.kruskal(data[0],data[1])
+h_stat, p_kruskal = stats.mannwhitneyu(data[0],data[1])
 ax.plot([0.7,2.3], [35,35], color='k', lw=1)
 ax.text(1.5,35, f"P={p_kruskal:.3e}", 
         ha='center', va='bottom', color='k', fontsize=8)
